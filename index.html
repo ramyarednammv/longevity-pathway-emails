@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longevity Collection &mdash; Full Email Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-secondary: #f7f9fc;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a5568;
+            --text-muted: #94a3b8;
+            --border: #e2e8f0;
+            --border-light: #f1f0f5;
+            --accent: #10b981;
+            --accent-light: #6ee7b7;
+            --accent-soft: #ecfdf5;
+            --accent-glow: rgba(16, 185, 129, 0.12);
+            --green: #10b981;
+            --green-bg: #ecfdf5;
+            --amber: #f59e0b;
+            --amber-bg: #fffbeb;
+            --gold: #d97706;
+            --card-radius: 16px;
+            --node-radius: 10px;
+            --tenx-color: #f97316;
+            --wf-color: #8b5cf6;
+            --ms-color: #3b82f6;
+            --bf-color: #10b981;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.08);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:var(--bg); min-height:100vh; color:var(--text-primary); overflow-x:hidden; }
+
+        .page-wrapper { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:48px 24px 80px; }
+        .page-header { text-align:center; margin-bottom:48px; opacity:0; animation:fadeInDown 0.8s ease-out 0.2s forwards; }
+        .logo-text { font-size:12px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:var(--accent); margin-bottom:24px; }
+        .page-header h1 { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; line-height:1.2; margin-bottom:12px; color:var(--text-primary); }
+        .page-header .subtitle { font-size:clamp(0.9rem,2vw,1.05rem); font-weight:400; color:var(--text-secondary); max-width:600px; margin:0 auto; line-height:1.7; }
+
+        .stats-bar { display:flex; justify-content:center; gap:32px; margin:32px 0 48px; flex-wrap:wrap; opacity:0; animation:fadeInDown 0.8s ease-out 0.4s forwards; }
+        .stat { text-align:center; }
+        .stat-number { font-size:1.8rem; font-weight:700; line-height:1; margin-bottom:4px; }
+        .stat-number.green { color:var(--green); }
+        .stat-number.amber { color:var(--amber); }
+        .stat-number.muted { color:var(--text-muted); }
+        .stat-number.white { color:var(--text-primary); }
+        .stat-label { font-size:0.7rem; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); }
+
+        .funnel-bar { display:flex; gap:4px; margin-bottom:56px; opacity:0; animation:fadeInDown 0.8s ease-out 0.5s forwards; }
+        .funnel-step { flex:1; text-align:center; cursor:pointer; transition:all 0.3s ease; }
+        .funnel-step-bar { height:4px; border-radius:2px; margin-bottom:10px; transition:all 0.3s ease; }
+        .funnel-step:hover .funnel-step-bar { height:6px; filter:brightness(1.1); }
+        .funnel-step-label { font-size:0.65rem; font-weight:500; letter-spacing:0.5px; color:var(--text-muted); transition:color 0.3s ease; }
+        .funnel-step:hover .funnel-step-label { color:var(--text-primary); }
+
+        .stage { margin-bottom:40px; scroll-margin-top:20px; opacity:0; animation:fadeInUp 0.6s ease-out forwards; }
+        .stage:nth-child(1) { animation-delay:0.7s; }
+        .stage:nth-child(2) { animation-delay:0.85s; }
+        .stage:nth-child(3) { animation-delay:1.0s; }
+        .stage:nth-child(4) { animation-delay:1.15s; }
+        .stage-header { display:flex; align-items:center; gap:16px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid var(--border); }
+        .stage-number { width:36px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:10px; font-size:0.8rem; font-weight:700; flex-shrink:0; }
+        .stage-title { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:600; flex:1; color:var(--text-primary); }
+        .stage-count { font-size:0.75rem; font-weight:500; color:var(--text-muted); letter-spacing:0.5px; }
+        .stage-connector { width:2px; height:32px; background:linear-gradient(180deg,var(--border),transparent); margin:0 auto; opacity:0; animation:fadeInUp 0.4s ease-out forwards; }
+
+        .swim-lanes { display:flex; flex-direction:column; gap:16px; }
+        .swim-lane { background:var(--bg); border:1px solid var(--border); border-radius:var(--card-radius); padding:20px 24px; transition:border-color 0.3s ease, box-shadow 0.3s ease; }
+        .swim-lane:hover { border-color:var(--accent-light); box-shadow:var(--shadow-md); }
+        .lane-header { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+        .lane-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+        .lane-name { font-size:0.85rem; font-weight:600; color:var(--text-primary); flex:1; }
+        .lane-status-summary { font-size:0.7rem; font-weight:500; padding:3px 10px; border-radius:20px; }
+        .lane-status-summary.live { background:var(--green-bg); color:var(--green); }
+        .lane-status-summary.in-progress { background:var(--amber-bg); color:var(--amber); }
+        .lane-status-summary.todo { background:var(--bg-secondary); color:var(--text-muted); }
+        .lane-status-summary.done { background:var(--accent-soft); color:var(--accent); }
+
+        .email-nodes { display:flex; gap:8px; flex-wrap:wrap; }
+        .email-node { background:var(--bg-secondary); border:1px solid var(--border-light); border-radius:var(--node-radius); padding:10px 14px; cursor:pointer; transition:all 0.25s ease; flex:1; min-width:140px; max-width:260px; }
+        .email-node:hover { background:var(--bg); border-color:var(--accent-light); transform:translateY(-2px); box-shadow:var(--shadow-md); }
+        .email-node.live { border-left:3px solid var(--green); }
+        .email-node.in-progress { border-left:3px solid var(--amber); }
+        .email-node.todo { border-left:3px solid var(--border); }
+        .email-node.done { border-left:3px solid var(--accent); }
+        .node-top { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:4px; }
+        .node-day { font-size:0.6rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); }
+        .node-status { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+        .node-status.live { background:var(--green); }
+        .node-status.in-progress { background:var(--amber); }
+        .node-status.todo { background:var(--border); }
+        .node-status.done { background:var(--accent); }
+        .node-name { font-size:0.78rem; font-weight:500; color:var(--text-primary); line-height:1.4; }
+        .node-cta { font-size:0.65rem; color:var(--text-muted); margin-top:4px; }
+
+        .single-lane { background:var(--bg); border:1px solid var(--border); border-radius:var(--card-radius); padding:24px; }
+        .single-lane .email-nodes { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; }
+        .single-lane .email-node { max-width:none; }
+
+        /* ============ MODAL ============ */
+        .modal-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.35); z-index:100; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); overflow-y:auto; animation:modalFadeIn 0.3s ease-out; }
+        .modal-overlay.open { display:flex; justify-content:center; padding:40px 20px; }
+        @keyframes modalFadeIn { from{opacity:0} to{opacity:1} }
+        .modal-content { background:#fff; border-radius:20px; max-width:680px; width:100%; padding:0; position:relative; animation:modalSlideUp 0.35s ease-out; align-self:flex-start; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 12px 40px rgba(0,0,0,0.08); }
+        @keyframes modalSlideUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+        .modal-close { position:absolute; top:16px; right:16px; width:36px; height:36px; border-radius:50%; background:#fff; border:0.5px solid #d2d2d7; color:#86868b; font-size:20px; cursor:pointer; z-index:5; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+        .modal-close:hover { background:#f5f5f7; color:#1d1d1f; }
+        .modal-hero { display:none; }
+        .modal-inner { padding:40px 44px 48px; }
+        .modal-badges { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+        .badge { font-size:11px; font-weight:600; padding:3px 10px; border-radius:100px; letter-spacing:0.3px; }
+        .badge-schwartz { background:#ecfdf5; color:#047857; }
+        .badge-cialdini { background:#fff8eb; color:#b45309; }
+        .modal-subject { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; line-height:1.3; margin-bottom:8px; color:#1d1d1f; letter-spacing:-0.02em; }
+        .modal-preheader { font-size:14px; color:#86868b; font-style:italic; margin-bottom:28px; line-height:1.5; padding-bottom:20px; border-bottom:0.5px solid #d2d2d7; }
+        .modal-body { font-size:15px; color:#424245; line-height:1.65; }
+        .modal-body p { margin-bottom:16px; }
+        .modal-body strong { color:#1d1d1f; font-weight:600; }
+        .modal-body .section-divider { height:1px; background:linear-gradient(90deg,transparent,#d2d2d7,transparent); margin:28px 0; }
+        .modal-body .bullet-group { background:#f5f5f7; border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .modal-body .bullet-group-title { font-size:14px; font-weight:600; color:#047857; margin-bottom:14px; letter-spacing:0.2px; }
+        .modal-body .arrow-item { padding-left:28px; position:relative; margin-bottom:10px; font-size:15px; line-height:1.6; }
+        .modal-body .arrow-item:last-child { margin-bottom:0; }
+        .modal-body .arrow-item::before { content:'\2192'; position:absolute; left:0; color:#047857; font-size:15px; font-weight:700; }
+        .modal-body .testimonial { background:#f5f5f7; border-left:3px solid #10b981; border-radius:0 12px 12px 0; padding:20px 24px; margin:20px 0; font-style:italic; font-size:14px; line-height:1.7; color:#424245; }
+        .modal-body .testimonial .testimonial-attr { font-style:normal; font-weight:600; color:#047857; margin-top:8px; font-size:13px; }
+        .modal-body .story-card { display:flex; gap:16px; background:#f5f5f7; border-radius:12px; padding:20px 24px; margin:20px 0; align-items:flex-start; }
+        .modal-body .story-card img { width:88px; height:88px; border-radius:10px; object-fit:cover; flex-shrink:0; }
+        .modal-body .story-card-body { flex:1; min-width:0; }
+        .modal-body .story-card-quote { font-style:italic; font-size:14px; line-height:1.65; color:#424245; margin-bottom:10px; }
+        .modal-body .story-card-quote strong { font-style:italic; color:#1d1d1f; }
+        .modal-body .story-card-attr { font-weight:600; font-size:12px; color:#047857; letter-spacing:0.2px; }
+        .modal-body a { color:#047857; text-decoration:none; font-weight:500; border-bottom:1px solid rgba(4,120,87,0.2); transition:border-color 0.2s; }
+        .modal-body a:hover { border-bottom-color:#047857; }
+        .modal-body .email-sig { margin-top:28px; padding-top:20px; border-top:0.5px solid #d2d2d7; color:#86868b; font-size:14px; line-height:1.6; }
+        .modal-body .email-sig strong { color:#1d1d1f; }
+        .modal-body .email-ps { background:#ecfdf5; border-radius:12px; padding:16px 20px; margin-top:24px; font-size:14px; line-height:1.6; color:#424245; }
+        .modal-body .email-ps strong { color:#1d1d1f; }
+        .modal-body .body-hero { width:calc(100% + 24px); margin-left:-12px; border-radius:16px; margin-top:20px; margin-bottom:24px; display:block; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06); }
+        .modal-body .inline-cta { display:inline-block; background:#ecfdf5; color:#047857; font-weight:600; font-size:14px; padding:8px 16px; border-radius:100px; border:none; text-decoration:none; margin:4px 0; transition:background 0.2s; }
+        .modal-body .inline-cta:hover { background:#d1fae5; border:none; }
+        .modal-cta-wrap { margin-top:36px; text-align:center; }
+        .modal-cta-btn { display:inline-block; padding:14px 36px; background:#10b981; color:#fff; font-weight:600; font-size:15px; border-radius:100px; text-decoration:none; transition:all 0.25s; letter-spacing:0.3px; }
+        .modal-cta-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(16,185,129,0.25); background:#059669; }
+
+        .legend { display:flex; justify-content:center; gap:24px; margin-top:48px; padding-top:24px; border-top:1px solid var(--border); flex-wrap:wrap; }
+        .legend-item { display:flex; align-items:center; gap:8px; font-size:0.72rem; color:var(--text-muted); }
+        .legend-dot { width:8px; height:8px; border-radius:50%; }
+        .legend-dot.live { background:var(--green); }
+        .legend-dot.in-progress { background:var(--amber); }
+        .legend-dot.todo { background:var(--border); }
+        .legend-dot.done { background:var(--accent); }
+        .footer-note { text-align:center; margin-top:16px; font-size:0.7rem; color:var(--text-muted); }
+
+        @keyframes fadeInDown { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes fadeInUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+
+        @media (max-width:768px) {
+            .page-wrapper { padding:32px 16px 60px; }
+            .stats-bar { gap:20px; }
+            .funnel-bar { flex-wrap:wrap; gap:8px; }
+            .funnel-step { min-width:80px; }
+            .email-nodes { flex-direction:column; }
+            .email-node { max-width:none; min-width:0; }
+            .swim-lane { padding:16px; }
+            .single-lane .email-nodes { grid-template-columns:1fr; }
+            .modal-overlay.open { padding:16px 10px; }
+            .modal-inner { padding:28px 20px 36px; }
+            .modal-subject { font-size:1.2rem; }
+            .modal-body .body-hero { width:calc(100% + 16px); margin-left:-8px; border-radius:12px; }
+            .modal-body .bullet-group { padding:16px 18px; }
+            .modal-body .testimonial { padding:16px 18px; }
+            .modal-body .story-card { flex-direction:column; align-items:center; text-align:center; padding:16px 18px; }
+            .modal-body .story-card img { width:72px; height:72px; }
+        }
+        @media (max-width:480px) {
+            .stage-header { flex-wrap:wrap; gap:10px; }
+            .stage-count { width:100%; }
+            .lane-header { flex-wrap:wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="page-header">
+            <div class="logo-text">Mindvalley</div>
+            <h1>Longevity Collection<br>Email Journey</h1>
+            <p class="subtitle">The complete email funnel &mdash; 44 emails across 4 stages. Click any email to preview full copy, strategic frameworks &amp; CTAs.</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat"><div class="stat-number white">44</div><div class="stat-label">Total Emails</div></div>
+            <div class="stat"><div class="stat-number muted">0</div><div class="stat-label">Live</div></div>
+            <div class="stat"><div class="stat-number" style="color:var(--accent)">44</div><div class="stat-label">Written</div></div>
+            <div class="stat"><div class="stat-number white">44</div><div class="stat-label">Viewable</div></div>
+        </div>
+
+        <div class="funnel-bar">
+            <div class="funnel-step" onclick="scrollToStage('stage-1')"><div class="funnel-step-bar" style="background:var(--accent)"></div><div class="funnel-step-label">Masterclass Invite</div></div>
+            <div class="funnel-step" onclick="scrollToStage('stage-2')"><div class="funnel-step-bar" style="background:var(--accent)"></div><div class="funnel-step-label">Program Onboarding</div></div>
+            <div class="funnel-step" onclick="scrollToStage('stage-3')"><div class="funnel-step-bar" style="background:var(--accent)"></div><div class="funnel-step-label">Collection Onboarding</div></div>
+            <div class="funnel-step" onclick="scrollToStage('stage-4')"><div class="funnel-step-bar" style="background:var(--accent)"></div><div class="funnel-step-label">Post-Onboarding Upsells</div></div>
+        </div>
+
+        <!-- STAGE 1: MASTERCLASS INVITE -->
+        <section class="stage" id="stage-1">
+            <div class="stage-header">
+                <div class="stage-number" style="background:var(--accent-soft);color:var(--accent)">1</div>
+                <div class="stage-title">Masterclass Invite Sequences</div>
+                <div class="stage-count">12 emails &middot; 4 funnels &times; 3 emails</div>
+            </div>
+            <div class="swim-lanes">
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--tenx-color)"></div><div class="lane-name">10x Fitness &mdash; Transform Your Body</div><span class="lane-status-summary done">Written</span></div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('mc-10x-1')"><div class="node-top"><span class="node-day">Email 1</span><span class="node-status done"></span></div><div class="node-name">Story + Hook: Lorenzo &amp; Vishen</div><div class="node-cta">CTA: Watch Free Masterclass</div></div>
+                        <div class="email-node done" onclick="openEmail('mc-10x-2')"><div class="node-top"><span class="node-day">Email 2</span><span class="node-status done"></span></div><div class="node-name">Science of 15-Min Workouts</div><div class="node-cta">CTA: Watch Free Masterclass</div></div>
+                        <div class="email-node done" onclick="openEmail('mc-10x-3')"><div class="node-top"><span class="node-day">Email 3</span><span class="node-status done"></span></div><div class="node-name">Last Call</div><div class="node-cta">CTA: Watch Before It Ends</div></div>
+                    </div>
+                </div>
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--wf-color)"></div><div class="lane-name">WildFit &mdash; Reprogram Your Nutrition</div><span class="lane-status-summary done">Written</span></div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('mc-wf-1')"><div class="node-top"><span class="node-day">Email 1</span><span class="node-status done"></span></div><div class="node-name">Eric&rsquo;s Surgery Story</div><div class="node-cta">CTA: Watch Free Masterclass</div></div>
+                        <div class="email-node done" onclick="openEmail('mc-wf-2')"><div class="node-top"><span class="node-day">Email 2</span><span class="node-status done"></span></div><div class="node-name">3 Secrets That End Dieting</div><div class="node-cta">CTA: Watch Free Masterclass</div></div>
+                        <div class="email-node done" onclick="openEmail('mc-wf-3')"><div class="node-top"><span class="node-day">Email 3</span><span class="node-status done"></span></div><div class="node-name">Last Call</div><div class="node-cta">CTA: Watch Before It Ends</div></div>
+                    </div>
+                </div>
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--ms-color)"></div><div class="lane-name">The Mastery of Sleep &mdash; Optimal Recovery</div><span class="lane-status-summary done">Written</span></div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('mc-ms-1')"><div class="node-top"><span class="node-day">Email 1</span><span class="node-status done"></span></div><div class="node-name">The 30% Brainpower Myth</div><div class="node-cta">CTA: Watch Free Masterclass</div></div>
+                        <div class="email-node done" onclick="openEmail('mc-ms-2')"><div class="node-top"><span class="node-day">Email 2</span><span class="node-status done"></span></div><div class="node-name">Your Chronotype Revealed</div><div class="node-cta">CTA: Watch Free Masterclass</div></div>
+                        <div class="email-node done" onclick="openEmail('mc-ms-3')"><div class="node-top"><span class="node-day">Email 3</span><span class="node-status done"></span></div><div class="node-name">Last Call</div><div class="node-cta">CTA: Watch Before It Ends</div></div>
+                    </div>
+                </div>
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--bf-color)"></div><div class="lane-name">Beyond Fasting &mdash; Metabolic Mastery</div><span class="lane-status-summary done">Written</span></div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('mc-bf-1')"><div class="node-top"><span class="node-day">Email 1</span><span class="node-status done"></span></div><div class="node-name">Ronan&rsquo;s Fasting Mistake</div><div class="node-cta">CTA: Watch Free Masterclass</div></div>
+                        <div class="email-node done" onclick="openEmail('mc-bf-2')"><div class="node-top"><span class="node-day">Email 2</span><span class="node-status done"></span></div><div class="node-name">Your Personal Fasting Window</div><div class="node-cta">CTA: Watch Free Masterclass</div></div>
+                        <div class="email-node done" onclick="openEmail('mc-bf-3')"><div class="node-top"><span class="node-day">Email 3</span><span class="node-status done"></span></div><div class="node-name">Last Call</div><div class="node-cta">CTA: Watch Before It Ends</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="stage-connector" style="animation-delay:0.9s"></div>
+
+        <!-- STAGE 2: SINGLE PROGRAM ONBOARDING -->
+        <section class="stage" id="stage-2">
+            <div class="stage-header">
+                <div class="stage-number" style="background:var(--accent-soft);color:var(--accent)">2</div>
+                <div class="stage-title">Single Program Customer Onboarding</div>
+                <div class="stage-count">12 emails &middot; 3 per program</div>
+            </div>
+            <div class="swim-lanes">
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--tenx-color)"></div><div class="lane-name">10x Fitness</div><span class="lane-status-summary done">Written</span></div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('ob-10x-1')"><div class="node-top"><span class="node-day">Day 1</span><span class="node-status done"></span></div><div class="node-name">Welcome</div><div class="node-cta">CTA: Log In &amp; Start</div></div>
+                        <div class="email-node done" onclick="openEmail('ob-10x-2')"><div class="node-top"><span class="node-day">Day 2</span><span class="node-status done"></span></div><div class="node-name">Slow-Motion Strength</div><div class="node-cta">CTA: Start First Lesson</div></div>
+                        <div class="email-node done" onclick="openEmail('ob-10x-3')"><div class="node-top"><span class="node-day">Day 3</span><span class="node-status done"></span></div><div class="node-name">Build the Habit</div><div class="node-cta">CTA: Continue Quest</div></div>
+                    </div>
+                </div>
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--wf-color)"></div><div class="lane-name">WildFit</div><span class="lane-status-summary done">Written</span></div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('ob-wf-1')"><div class="node-top"><span class="node-day">Day 1</span><span class="node-status done"></span></div><div class="node-name">Welcome</div><div class="node-cta">CTA: Log In &amp; Start</div></div>
+                        <div class="email-node done" onclick="openEmail('ob-wf-2')"><div class="node-top"><span class="node-day">Day 2</span><span class="node-status done"></span></div><div class="node-name">The 6 Human Hungers</div><div class="node-cta">CTA: Start First Lesson</div></div>
+                        <div class="email-node done" onclick="openEmail('ob-wf-3')"><div class="node-top"><span class="node-day">Day 3</span><span class="node-status done"></span></div><div class="node-name">Cravings Dissolve</div><div class="node-cta">CTA: Continue Quest</div></div>
+                    </div>
+                </div>
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--ms-color)"></div><div class="lane-name">The Mastery of Sleep</div><span class="lane-status-summary done">Written</span></div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('ob-ms-1')"><div class="node-top"><span class="node-day">Day 1</span><span class="node-status done"></span></div><div class="node-name">Welcome</div><div class="node-cta">CTA: Log In &amp; Start</div></div>
+                        <div class="email-node done" onclick="openEmail('ob-ms-2')"><div class="node-top"><span class="node-day">Day 2</span><span class="node-status done"></span></div><div class="node-name">Discover Your Chronotype</div><div class="node-cta">CTA: Start First Lesson</div></div>
+                        <div class="email-node done" onclick="openEmail('ob-ms-3')"><div class="node-top"><span class="node-day">Day 3</span><span class="node-status done"></span></div><div class="node-name">The 90-Minute Rule</div><div class="node-cta">CTA: Continue Quest</div></div>
+                    </div>
+                </div>
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--bf-color)"></div><div class="lane-name">Beyond Fasting</div><span class="lane-status-summary done">Written</span></div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('ob-bf-1')"><div class="node-top"><span class="node-day">Day 1</span><span class="node-status done"></span></div><div class="node-name">Welcome</div><div class="node-cta">CTA: Log In &amp; Start</div></div>
+                        <div class="email-node done" onclick="openEmail('ob-bf-2')"><div class="node-top"><span class="node-day">Day 2</span><span class="node-status done"></span></div><div class="node-name">Your Personal Fasting Window</div><div class="node-cta">CTA: Start First Lesson</div></div>
+                        <div class="email-node done" onclick="openEmail('ob-bf-3')"><div class="node-top"><span class="node-day">Day 3</span><span class="node-status done"></span></div><div class="node-name">The Mind Hack</div><div class="node-cta">CTA: Continue Quest</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="stage-connector" style="animation-delay:1.05s"></div>
+
+        <!-- STAGE 3: COLLECTION ONBOARDING -->
+        <section class="stage" id="stage-3">
+            <div class="stage-header">
+                <div class="stage-number" style="background:var(--accent-soft);color:var(--accent)">3</div>
+                <div class="stage-title">Collection Customer Onboarding</div>
+                <div class="stage-count">9 emails over 21 days &middot; Written</div>
+            </div>
+            <div class="single-lane timeline-lane">
+                <div class="email-nodes">
+                    <div class="email-node done" onclick="openEmail('co-1')"><div class="node-top"><span class="node-day">Day 0</span><span class="node-status done"></span></div><div class="node-name">Welcome + Access</div><div class="node-cta">CTA: Log In &amp; Explore</div></div>
+                    <div class="email-node done" onclick="openEmail('co-2')"><div class="node-top"><span class="node-day">Day 1</span><span class="node-status done"></span></div><div class="node-name">App Download</div><div class="node-cta">CTA: Download App</div></div>
+                    <div class="email-node done" onclick="openEmail('co-3')"><div class="node-top"><span class="node-day">Day 2</span><span class="node-status done"></span></div><div class="node-name">Choose Your Quest</div><div class="node-cta">CTA: Start 10x Fitness</div></div>
+                    <div class="email-node done" onclick="openEmail('co-4')"><div class="node-top"><span class="node-day">Day 3</span><span class="node-status done"></span></div><div class="node-name">First Lesson (15 min)</div><div class="node-cta">CTA: Open App</div></div>
+                    <div class="email-node done" onclick="openEmail('co-5')"><div class="node-top"><span class="node-day">Day 5</span><span class="node-status done"></span></div><div class="node-name">4-Quest Longevity Roadmap</div><div class="node-cta">CTA: Start Full Quest</div></div>
+                    <div class="email-node done" onclick="openEmail('co-6')"><div class="node-top"><span class="node-day">Day 7</span><span class="node-status done"></span></div><div class="node-name">Week 1 &mdash; What&rsquo;s Shifting?</div><div class="node-cta">CTA: Continue Quest</div></div>
+                    <div class="email-node done" onclick="openEmail('co-7')"><div class="node-top"><span class="node-day">Day 10</span><span class="node-status done"></span></div><div class="node-name">Unlock Biohacking Toolkit</div><div class="node-cta">CTA: Explore Tools</div></div>
+                    <div class="email-node done" onclick="openEmail('co-8')"><div class="node-top"><span class="node-day">Day 14</span><span class="node-status done"></span></div><div class="node-name">Success Stories (3 Transformations)</div><div class="node-cta">CTA: Explore Collection</div></div>
+                    <div class="email-node done" onclick="openEmail('co-9')"><div class="node-top"><span class="node-day">Day 21</span><span class="node-status done"></span></div><div class="node-name">3-Week Checkpoint</div><div class="node-cta">CTA: Continue Journey</div></div>
+                </div>
+            </div>
+        </section>
+        <div class="stage-connector" style="animation-delay:1.2s"></div>
+
+        <!-- STAGE 4: POST-ONBOARDING UPSELL EMAILS -->
+        <section class="stage" id="stage-4">
+            <div class="stage-header">
+                <div class="stage-number" style="background:var(--accent-soft);color:var(--accent)">4</div>
+                <div class="stage-title">Post-Onboarding Upsell Emails</div>
+                <div class="stage-count">11 emails &middot; 3 lanes, story-driven</div>
+            </div>
+            <div class="swim-lanes">
+                <!-- Lane 1: Single Program Customers — 3 test variants -->
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--tenx-color)"></div><div class="lane-name">From Single Program Customers</div><span class="lane-status-summary done">3 test variants</span></div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('sale-sp-col')"><div class="node-top"><span class="node-day">Test A</span><span class="node-status done"></span></div><div class="node-name">The Incomplete System</div><div class="node-cta">CTA: Explore the Collection</div></div>
+                        <div class="email-node done" onclick="openEmail('sale-sp-mem')"><div class="node-top"><span class="node-day">Test B</span><span class="node-status done"></span></div><div class="node-name">The Weakest Link</div><div class="node-cta">CTA: Explore Membership</div></div>
+                        <div class="email-node done" onclick="openEmail('sale-sp-both')"><div class="node-top"><span class="node-day">Test C</span><span class="node-status done"></span></div><div class="node-name">Two Doors</div><div class="node-cta">CTA: Choose Your Path</div></div>
+                    </div>
+                </div>
+                <!-- Lane 2: Collection Customers — 4 emails (2 sub-rows) -->
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--wf-color)"></div><div class="lane-name">From Collection Customers</div><span class="lane-status-summary done">4 written</span></div>
+                    <div style="font-size:0.68rem;font-weight:600;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Yearly &rarr; Membership ($500/yr)</div>
+                    <div class="email-nodes" style="margin-bottom:14px;">
+                        <div class="email-node done" onclick="openEmail('sale-col-mem-1')"><div class="node-top"><span class="node-day">Email 1</span><span class="node-status done"></span></div><div class="node-name">The Outgrowth Story</div><div class="node-cta">CTA: Explore Membership</div></div>
+                        <div class="email-node done" onclick="openEmail('sale-col-mem-2')"><div class="node-top"><span class="node-day">Email 2</span><span class="node-status done"></span></div><div class="node-name">Private Invitation</div><div class="node-cta">CTA: Accept Your Invitation</div></div>
+                    </div>
+                    <div style="font-size:0.68rem;font-weight:600;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Monthly &rarr; Yearly Billing ($299/yr vs $49/mo)</div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('sale-col-yr-1')"><div class="node-top"><span class="node-day">Email 1</span><span class="node-status done"></span></div><div class="node-name">The Commitment Frequency</div><div class="node-cta">CTA: Switch to Yearly</div></div>
+                        <div class="email-node done" onclick="openEmail('sale-col-yr-2')"><div class="node-top"><span class="node-day">Email 2</span><span class="node-status done"></span></div><div class="node-name">Rate Lock Window</div><div class="node-cta">CTA: Lock Your Rate</div></div>
+                    </div>
+                </div>
+                <!-- Lane 3: Full Membership Customers — 4 emails (2 sub-rows) -->
+                <div class="swim-lane">
+                    <div class="lane-header"><div class="lane-dot" style="background:var(--ms-color)"></div><div class="lane-name">From Full Membership Customers</div><span class="lane-status-summary done">4 written</span></div>
+                    <div style="font-size:0.68rem;font-weight:600;color:#ef4444;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Yearly &rarr; Accelerator ($999) &bull; RED PRIORITY</div>
+                    <div class="email-nodes" style="margin-bottom:14px;">
+                        <div class="email-node done" style="border-left:3px solid #ef4444" onclick="openEmail('sale-fm-accel-1')"><div class="node-top"><span class="node-day" style="color:#ef4444">Email 1 &bull; RED</span><span class="node-status done" style="background:#ef4444"></span></div><div class="node-name">The Knowing-Doing Gap</div><div class="node-cta">CTA: Join the Accelerator</div></div>
+                        <div class="email-node done" style="border-left:3px solid #ef4444" onclick="openEmail('sale-fm-accel-2')"><div class="node-top"><span class="node-day" style="color:#ef4444">Email 2 &bull; RED</span><span class="node-status done" style="background:#ef4444"></span></div><div class="node-name">Limited Seats &mdash; Members Only</div><div class="node-cta">CTA: Claim Your Seat</div></div>
+                    </div>
+                    <div style="font-size:0.68rem;font-weight:600;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Monthly &rarr; Yearly Billing ($500/yr vs $X/mo)</div>
+                    <div class="email-nodes">
+                        <div class="email-node done" onclick="openEmail('sale-fm-yr-1')"><div class="node-top"><span class="node-day">Email 1</span><span class="node-status done"></span></div><div class="node-name">Compounding Commitment</div><div class="node-cta">CTA: Switch to Annual</div></div>
+                        <div class="email-node done" onclick="openEmail('sale-fm-yr-2')"><div class="node-top"><span class="node-day">Email 2</span><span class="node-status done"></span></div><div class="node-name">Your Rate Lock Window</div><div class="node-cta">CTA: Lock Your Rate</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-dot done"></div> Written (click to preview)</div>
+        </div>
+        <p class="footer-note">Longevity Collection Email Journey &middot; Last updated Mar 2026</p>
+    </div>
+
+    <!-- EMAIL MODAL -->
+    <div id="email-modal" class="modal-overlay" onclick="if(event.target===this)closeModal()">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img id="modal-img" class="modal-hero" src="" alt="">
+            <div class="modal-inner">
+                <div class="modal-badges">
+                    <span id="badge-schwartz" class="badge badge-schwartz"></span>
+                    <span id="badge-cialdini" class="badge badge-cialdini"></span>
+                </div>
+                <h2 id="modal-subject" class="modal-subject"></h2>
+                <p id="modal-preheader" class="modal-preheader"></p>
+                <div id="modal-body" class="modal-body"></div>
+                <div class="modal-cta-wrap">
+                    <a id="modal-cta" class="modal-cta-btn" href="" target="_blank"></a>
+                    <a id="modal-cta-2" class="modal-cta-btn" href="" target="_blank" style="display:none;margin-top:12px;background:#1d1d1f;"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOAD EMAIL DATA -->
+    <script src="emails-stage1.js"></script>
+    <script src="emails-stage2.js"></script>
+    <script src="emails-stage3.js"></script>
+    <script src="emails-stage4.js"></script>
+
+    <script>
+    function scrollToStage(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});}
+
+    function renderBody(text){
+        var blocks=text.split('\n\n');
+        var html='';
+        var i=0;
+        function md(s){
+            s=s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+            s=s.replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank">$1</a>');
+            return s;
+        }
+        function isArrow(s){return s.trim().startsWith('-->');}
+        function isSig(s){return /^(To your|With deep|With love|With gratitude|With respect|Rooting|Proud|Welcome to|Here's to|Keep)/.test(s);}
+        function isTestimonial(s){
+            var t=s.trim();
+            return (t.startsWith('**"')||t.startsWith('"')) && (t.includes('--')||t.includes('\u2014'));
+        }
+        while(i<blocks.length){
+            var p=blocks[i];
+            if(p.trim()==='---'){html+='<div class="section-divider"></div>';i++;continue;}
+            if(p.trim().startsWith('![')){
+                var m=p.trim().match(/!\[([^\]]*)\]\(([^)]+)\)/);
+                if(m)html+='<img class="body-hero" src="'+m[2]+'" alt="'+m[1]+'">';
+                i++;continue;
+            }
+            if(isArrow(p)||(p.includes('\n-->'))){
+                html+='<div class="bullet-group">';
+                while(i<blocks.length){
+                    var b=blocks[i];
+                    if(b.trim()==='---'||(!isArrow(b)&&!b.includes('\n-->')))break;
+                    if(b.includes('\n')){
+                        b.split('\n').forEach(function(l){
+                            if(l.trim().startsWith('-->')){
+                                html+='<div class="arrow-item">'+md(l.trim().slice(3).trim())+'</div>';
+                            } else if(l.trim()){
+                                html+='<div class="bullet-group-title">'+md(l)+'</div>';
+                            }
+                        });
+                    } else {
+                        html+='<div class="arrow-item">'+md(b.trim().slice(3).trim())+'</div>';
+                    }
+                    i++;
+                }
+                html+='</div>';
+                continue;
+            }
+            if(isTestimonial(p)){
+                var parts=p.split(/\s--\s|\s\u2014\s/);
+                var quote=md(parts[0]);
+                var attr=parts.length>1?parts.slice(1).join(', '):'';
+                html+='<div class="testimonial">'+quote+(attr?'<div class="testimonial-attr">\u2014 '+md(attr)+'</div>':'')+'</div>';
+                i++;continue;
+            }
+            if(p.trim().startsWith('{{STORY}}')){
+                var sLines=p.split('\n');
+                var sPhoto=sLines[1]||'';
+                var sQuote=sLines[2]||'';
+                var sAttr=sLines[3]||'';
+                html+='<div class="story-card"><img src="'+sPhoto.trim()+'" alt="'+sAttr.trim()+'"><div class="story-card-body"><div class="story-card-quote">'+md(sQuote)+'</div><div class="story-card-attr">'+md(sAttr)+'</div></div></div>';
+                i++;continue;
+            }
+            if(p.startsWith('P.S.')){html+='<div class="email-ps">'+md(p)+'</div>';i++;continue;}
+            if(isSig(p)){html+='<div class="email-sig">'+md(p)+'</div>';i++;continue;}
+            if(p.startsWith('[Signature]')){html+='<div class="email-sig"><strong>Vishen Lakhiani</strong><br>Founder, Mindvalley</div>';i++;continue;}
+            html+='<p>'+md(p)+'</p>';
+            i++;
+        }
+        return html;
+    }
+
+    function openEmail(id){
+        const e=window.EMAIL_DATA[id];
+        if(!e)return;
+        document.getElementById('badge-schwartz').textContent=e.schwartz;
+        document.getElementById('badge-cialdini').textContent=e.cialdini;
+        document.getElementById('modal-subject').textContent=e.subject;
+        document.getElementById('modal-preheader').textContent=e.preheader;
+        var bodyHtml=renderBody(e.body);
+        var firstBreak=bodyHtml.indexOf('</p>');
+        if(firstBreak>-1 && e.img){
+            var imgTag='<img class="body-hero" src="'+e.img+'" alt="'+e.subject+'">';
+            bodyHtml=bodyHtml.slice(0,firstBreak+4)+imgTag+bodyHtml.slice(firstBreak+4);
+        }
+        document.getElementById('modal-body').innerHTML=bodyHtml;
+        var btn=document.getElementById('modal-cta');
+        btn.textContent=e.cta;
+        btn.href=e.url;
+        var btn2=document.getElementById('modal-cta-2');
+        if(e.cta2){btn2.textContent=e.cta2;btn2.href=e.url2;btn2.style.display='inline-block';}
+        else{btn2.style.display='none';}
+        document.getElementById('email-modal').classList.add('open');
+        document.body.style.overflow='hidden';
+    }
+
+    function closeModal(){
+        document.getElementById('email-modal').classList.remove('open');
+        document.body.style.overflow='';
+    }
+
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+    </script>
+</body>
+</html>
