@@ -1,90 +1,235 @@
 /* ======================================================
    STAGE 3 — Collection Customer Onboarding (9 emails / 21 days)
-   Longevity Collection · $399 · 28 programs
+   Longevity Collection · $299/yr
    Core 4: 10x Fitness, WildFit, The Mastery of Sleep, Beyond Fasting
    ====================================================== */
 
 Object.assign(window.EMAIL_DATA, {
 
 'co-1': {
-    subject: "You're in! Welcome to the Longevity Collection",
-    preheader: '28 programs. 4 core quests. Your login is inside.',
-    img: 'https://storyblok-cdn.mindvalley.com/f/60579/1200x770/c5a3099305/10x_lp_signup_top_d.jpg',
+    subject: 'You are in. Welcome to the Longevity Collection.',
+    preheader: '4 core quests. 15 minutes a day. Your login is inside.',
+    img: '',
     schwartz: 'Most-Aware', cialdini: 'Commitment',
     cta: 'Log In & Explore \u2192', url: 'https://www.mindvalley.com/longevity-collection',
-    body: "Congratulations. You just made a decision that most people will never make.\n\nYou did not buy a course. **You invested in decades -- potentially decades -- of healthy, vibrant, high-performance living that most people leave on the table.**\n\nThe Longevity Collection is now live in your account. Let me walk you through exactly what you have.\n\n---\n\n**What You Now Have Access To:**\n\n--> **28 transformational programs** spanning fitness, nutrition, sleep, fasting, longevity science, and holistic health\n--> **4 flagship Quests** handpicked as your starting foundation\n--> **Hundreds of lessons** -- each designed for 15-20 minutes a day\n--> **New programs and updates** added to the collection over time\n\n---\n\n**Your 4 Core Quests:**\n\n--> **10x Fitness** (Lorenzo Delano) -- build the body you want in just 15 minutes, twice a week\n--> **WildFit** (Eric Edmeades) -- reprogram your relationship with food at the deepest level\n--> **The Mastery of Sleep** (Dr. Michael Breus) -- optimize every sleep cycle for peak recovery and performance\n--> **Beyond Fasting** (Ronan Oliveira) -- master intermittent fasting for metabolic efficiency, longevity, and effortless weight management\n\nPlus 24 bonus programs covering everything from breathwork to stress management to peak physical performance.\n\n---\n\n**Where to Start:**\n\nMost members begin with one of two paths:\n\n--> **10x Fitness** -- if you want visible, physical results fast. 15-minute workouts you can start today.\n--> **WildFit** -- if food is your biggest struggle. Eric Edmeades's psychological approach dissolves cravings without willpower.\n\nBoth take about 15-20 minutes per day. Both deliver results within the first week.\n\nYour collection is waiting. Log in, pick your path, and press play.\n\n**[Log In & Explore \u2192](https://www.mindvalley.com/longevity-collection)**\n\n---\n\nTo your longest, healthiest life,\n\n[Signature]\n\nP.S. Tomorrow, I will show you how to take this entire collection with you everywhere -- in your pocket, on your morning walk, at the gym. The transformation never has to stop."
+    body:
+    "# Welcome to the Longevity Collection\n\n" +
+    "Congratulations. You just made a decision most people will never make.\n\n" +
+    "You did not buy a course. **You invested in a complete system for decades of healthy, vibrant, high-performance living.**\n\n" +
+    "The Longevity Collection is now live in your account.\n\n" +
+    "---\n\n" +
+    "**What You Now Have Access To:**\n\n" +
+    "--> **4 flagship Quests** handpicked as your starting foundation\n--> **Hundreds of lessons** -- each designed for 15-20 minutes a day\n--> **New programs and updates** added to the collection over time\n\n" +
+    "---\n\n" +
+    "**Your 4 Core Quests:**\n\n" +
+    "--> **10x Fitness** (Lorenzo Delano & Ronan Oliveira) -- build the body you want in just 15 minutes, twice a week\n--> **The Mastery of Sleep** (Dr. Michael Breus) -- optimize every sleep cycle for peak recovery and performance\n--> **Beyond Fasting** (Ronan Oliveira) -- master intermittent fasting for metabolic efficiency and longevity\n--> **WildFit** (Eric Edmeades) -- reprogram your relationship with food at the deepest level\n\n" +
+    "---\n\n" +
+    "**Where to Start:**\n\nWe recommend beginning with **10x Fitness.** It gives you the fastest visible results and builds momentum for everything that follows. 15-minute workouts you can start today.\n\nAlternatively, if food is your biggest struggle, start with **WildFit.** Eric Edmeades's psychological approach dissolves cravings without willpower.\n\nBoth take 15-20 minutes per day. Both deliver results within the first week.\n\n**[Log In & Explore \u2192](https://www.mindvalley.com/longevity-collection)**\n\n" +
+    "To your longest, healthiest life,\n\n" +
+    "[Signature]\n\n" +
+    "P.S. Tomorrow, we will show you how to take this entire collection with you everywhere -- in your pocket, on your morning walk, at the gym."
 },
 
 'co-2': {
     subject: 'Download the app (transform anywhere, anytime)',
-    preheader: 'Your morning walk, your gym session, your commute -- all become health upgrades.',
-    img: 'https://storyblok-cdn.mindvalley.com/f/60579/1200x770/c5a3099305/10x_lp_signup_top_d.jpg',
+    preheader: 'Your morning walk, your gym, your commute -- all become health upgrades.',
+    img: '',
     schwartz: 'Most-Aware', cialdini: 'Commitment',
     cta: 'Download App \u2192', url: 'https://www.mindvalley.com/app',
-    body: "The healthiest people I know have one thing in common: **they turn ordinary moments into transformation time.**\n\nThe morning walk. The gym session. The 15 minutes before bed. The commute.\n\nWith the Mindvalley app, your entire Longevity Collection travels with you.\n\n---\n\n**What the App Gives You:**\n\n--> **Stream or download lessons offline** -- no Wi-Fi needed. Perfect for the gym, the trail, and unplugged mornings.\n--> **Daily micro-lessons (15-20 min)** -- structured so you never have to wonder \"what should I do for my health today?\"\n--> **Progress tracking** -- see your streaks, completed lessons, and milestones at a glance.\n--> **Community access** -- connect with health-focused members from 195 countries who are on the same journey.\n\n---\n\n**How Top Members Use It:**\n\n--> Morning walk + Beyond Fasting lesson = start the day with a metabolic optimization protocol\n--> Gym session + 10x Fitness guidance = train smarter in half the time\n--> Evening wind-down + Mastery of Sleep = optimize tonight's recovery before you close your eyes\n\nThe compound effect of learning during moments you would otherwise waste is staggering. 15 minutes a day becomes 91 hours of focused health education per year.\n\n---\n\n**Download now and your collection will sync automatically.**\n\n--> [iOS App Store](https://apps.apple.com/us/app/mindvalley-self-improvement/id1108786610)\n--> [Google Play Store](https://play.google.com/store/apps/details?id=com.mindvalley.mva)\n\n**[Download App \u2192](https://www.mindvalley.com/app)**\n\n---\n\nTo health in every moment,\n\n[Signature]\n\nP.S. Tomorrow, I will help you decide exactly which quest to start first. A simple framework that takes 60 seconds and points you to the perfect starting point for where your health is right now."
+    body:
+    "# Take Your Collection Everywhere\n\n" +
+    "The healthiest people we know have one thing in common: **they turn ordinary moments into transformation time.**\n\n" +
+    "The morning walk. The gym session. The 15 minutes before bed.\n\n" +
+    "With the Mindvalley app, your entire Longevity Collection travels with you.\n\n" +
+    "---\n\n" +
+    "**What the App Gives You:**\n\n" +
+    "--> **Stream or download lessons offline** -- no Wi-Fi needed\n--> **Daily micro-lessons (15-20 min)** -- never wonder \"what should I do for my health today?\"\n--> **Progress tracking** -- see your streaks, completed lessons, and milestones\n--> **Community access** -- connect with health-focused members from 195 countries\n\n" +
+    "---\n\n" +
+    "**How Members Use It:**\n\n" +
+    "--> Morning walk + Beyond Fasting lesson = start the day with metabolic optimization\n--> Gym session + 10x Fitness guidance = train smarter in half the time\n--> Evening wind-down + Mastery of Sleep = optimize tonight's recovery\n\n" +
+    "15 minutes a day becomes 91 hours of focused health education per year. That is more actionable longevity knowledge than most people absorb in a lifetime.\n\n" +
+    "---\n\n" +
+    "**Download now and your collection syncs automatically.**\n\n" +
+    "--> [iOS App Store](https://apps.apple.com/us/app/mindvalley-self-improvement/id1108786610)\n--> [Google Play Store](https://play.google.com/store/apps/details?id=com.mindvalley.mva)\n\n" +
+    "**[Download App \u2192](https://www.mindvalley.com/app)**\n\n" +
+    "To health in every moment,\n\n" +
+    "[Signature]\n\n" +
+    "P.S. Tomorrow, we will help you decide exactly which quest to start first. A simple framework that takes 60 seconds."
 },
 
 'co-3': {
     subject: 'Which quest should you start first? (60-second health audit)',
     preheader: '4 paths. One is perfect for your biggest health bottleneck right now.',
-    img: 'https://storyblok-cdn.mindvalley.com/f/60579/1200x770/c5a3099305/10x_lp_signup_top_d.jpg',
+    img: '',
     schwartz: 'Product-Aware', cialdini: 'Reciprocity',
     cta: 'Start 10x Fitness \u2192', url: 'https://www.mindvalley.com/longevity-collection',
-    body: "You have 28 programs at your fingertips. That is powerful -- but I do not want you staring at a menu when you could be transforming your health.\n\n**So here is a 60-second decision framework.**\n\nAnswer one question: **What is your biggest health bottleneck right now?**\n\n---\n\n**If your biggest issue is FITNESS and ENERGY:**\n\n--> Start with **10x Fitness** (Lorenzo Delano)\n--> You feel sluggish, heavy, or drained by mid-afternoon. Lorenzo's 15-minute micro-workouts are scientifically designed to flood your body with energy, build lean muscle, and boost metabolism -- without spending hours at the gym.\n\n**If FOOD is your struggle:**\n\n--> Start with **WildFit** (Eric Edmeades)\n--> You have tried diets. They work for a while, then they do not. Eric's approach is different -- it rewires your psychology around food so cravings dissolve naturally. No willpower required. No calorie counting. Just a new relationship with what you eat.\n\n**If SLEEP is broken:**\n\n--> Start with **The Mastery of Sleep** (Dr. Michael Breus)\n--> You wake up tired, toss and turn, or rely on caffeine to function. Dr. Breus -- \"The Sleep Doctor\" -- has appeared on Dr. Oz over 40 times. His chronotype system matches your sleep schedule to your biology. Most members report better sleep within the first week.\n\n**If you want METABOLIC OPTIMIZATION:**\n\n--> Start with **Beyond Fasting** (Ronan Oliveira)\n--> You want to unlock the science of intermittent fasting -- for weight loss, longevity, mental clarity, and workout amplification. Ronan has facilitated over 300,000 body transformations. His approach addresses the when, what, how, and why of eating.\n\n---\n\n**Not sure? Start with 10x Fitness.**\n\nIt gives you the fastest visible results and builds momentum for everything that follows. Most members find it energizing enough to propel them into their second quest.\n\n**[Start 10x Fitness \u2192](https://www.mindvalley.com/longevity-collection)**\n\n---\n\nTo your clearest path forward,\n\n[Signature]\n\nP.S. Whichever quest you choose, it takes only 15 minutes for your first lesson. Tomorrow, I will explain why those 15 minutes might be the most important quarter-hour of your week."
+    body:
+    "# The 60-Second Decision Framework\n\n" +
+    "You have 4 core programs. That is powerful -- but we do not want you staring at a menu when you could be transforming your health.\n\n" +
+    "**Answer one question: what is your biggest health bottleneck right now?**\n\n" +
+    "---\n\n" +
+    "**If FITNESS and ENERGY are your struggle:**\n\n--> Start with **10x Fitness** (Lorenzo Delano & Ronan Oliveira)\n--> 15-minute micro-workouts scientifically designed to flood your body with energy, build lean muscle, and boost metabolism -- without spending hours at the gym.\n\n" +
+    "**If FOOD is your struggle:**\n\n--> Start with **WildFit** (Eric Edmeades)\n--> Rewires your psychology around food so cravings dissolve naturally. No willpower. No calorie counting. 650,000 participants. Rated 4.94.\n\n" +
+    "**If SLEEP is broken:**\n\n--> Start with **The Mastery of Sleep** (Dr. Michael Breus)\n--> The Sleep Doctor has appeared on Dr. Oz 39 times. His Chronotype system matches your schedule to your biology. Most members report better sleep within the first week.\n\n" +
+    "**If you want METABOLIC OPTIMIZATION:**\n\n--> Start with **Beyond Fasting** (Ronan Oliveira)\n--> The science of intermittent fasting for weight loss, longevity, mental clarity, and workout amplification. Over 300,000 body transformations facilitated.\n\n" +
+    "---\n\n" +
+    "**Not sure? Start with 10x Fitness.** Fastest visible results. Builds momentum for everything else.\n\n" +
+    "**[Start 10x Fitness \u2192](https://www.mindvalley.com/longevity-collection)**\n\n" +
+    "To your clearest path forward,\n\n" +
+    "[Signature]\n\n" +
+    "P.S. Whichever quest you choose, it takes only 15 minutes for your first lesson. Tomorrow, we will explain why those 15 minutes might be the most important quarter-hour of your week."
 },
 
 'co-4': {
-    subject: '15 minutes that could change your health',
+    subject: '15 minutes that could change your health trajectory',
     preheader: 'The people who transform are not different. They just pressed play.',
-    img: 'https://storyblok-cdn.mindvalley.com/f/60579/1200x770/c5a3099305/10x_lp_signup_top_d.jpg',
-    schwartz: 'Product-Aware', cialdini: 'Commitment/Consistency',
+    img: '',
+    schwartz: 'Product-Aware', cialdini: 'Commitment',
     cta: 'Open App \u2192', url: 'https://www.mindvalley.com/app',
-    body: "I have watched hundreds of thousands of people join Mindvalley over the years.\n\nThe ones who transform their health and their lives are not more disciplined, more motivated, or more genetically gifted than the rest.\n\n**They did one thing differently: they did not wait for the perfect moment. They pressed play.**\n\n---\n\nYour first lesson takes about **15 minutes.**\n\nNot an hour. Not a weekend retreat. Not a 90-day bootcamp before you see results.\n\nFifteen minutes. While you drink your morning coffee. While you walk the dog. While you stretch on the living room floor.\n\n**That is 15 minutes to:**\n\n--> Begin rewiring how you approach your biggest health challenges\n--> Experience a world-class teacher guiding you step by step\n--> Feel the first subtle shift -- the one that tells you something is different\n\n---\n\n**Here is what most members report:**\n\nLesson 1: \"That was interesting.\"\nLesson 2: \"Okay, I see where this is going.\"\nLesson 3: **\"Wait -- why did no one tell me this before?\"**\n\nThe \"aha moment\" almost always lands within the first three lessons. But you have to start to feel it.\n\n---\n\n**The compound effect is real.**\n\n15 minutes a day for 21 days = 5.25 hours of focused health education from a world-class expert. That is more actionable longevity knowledge than most people absorb in a lifetime of random Google searches.\n\nAnd unlike random advice, what you learn here is sequenced. Each lesson builds on the last. Each day compounds.\n\n---\n\nOpen the app. Press play. Your first lesson is waiting.\n\n**[Open App \u2192](https://www.mindvalley.com/app)**\n\n---\n\nRooting for you,\n\n[Signature]\n\nP.S. In two days, I will share the full 4-quest longevity roadmap for your collection -- the exact sequence our healthiest members follow. But first, get that first lesson done. Everything builds from here."
+    body:
+    "# Press Play\n\n" +
+    "We have watched hundreds of thousands of people join Mindvalley over the years.\n\n" +
+    "The ones who transform are not more disciplined, more motivated, or more genetically gifted than the rest.\n\n" +
+    "**They did one thing differently: they did not wait for the perfect moment. They pressed play.**\n\n" +
+    "---\n\n" +
+    "Your first lesson takes about **15 minutes.**\n\n" +
+    "Not an hour. Not a weekend retreat. Not a 90-day bootcamp.\n\n" +
+    "Fifteen minutes. While you drink your morning coffee. While you walk the dog. While you stretch on the living room floor.\n\n" +
+    "**That is 15 minutes to:**\n\n" +
+    "--> Begin rewiring how you approach your biggest health challenges\n--> Experience a world-class teacher guiding you step by step\n--> Feel the first subtle shift\n\n" +
+    "---\n\n" +
+    "**Here is what most members report:**\n\nLesson 1: \"That was interesting.\"\nLesson 2: \"Okay, I see where this is going.\"\nLesson 3: **\"Wait -- why did no one tell me this before?\"**\n\n" +
+    "The compound effect is real. 15 minutes a day for 21 days = 5.25 hours of focused health education from world-class experts. More than most people absorb in a lifetime of Google searches.\n\n" +
+    "---\n\n" +
+    "Open the app. Press play. Your first lesson is waiting.\n\n" +
+    "**[Open App \u2192](https://www.mindvalley.com/app)**\n\n" +
+    "Rooting for you,\n\n" +
+    "[Signature]\n\n" +
+    "P.S. In two days, we will share the full 4-quest longevity roadmap -- the exact sequence our healthiest members follow. But first, get that first lesson done."
 },
 
 'co-5': {
     subject: 'The 4-quest longevity roadmap (your collection blueprint)',
     preheader: 'A 4-month health transformation. Here is the exact sequence.',
-    img: 'https://storyblok-cdn.mindvalley.com/f/60579/1200x770/c5a3099305/10x_lp_signup_top_d.jpg',
+    img: '',
     schwartz: 'Product-Aware', cialdini: 'Authority',
     cta: 'Start Full Quest \u2192', url: 'https://www.mindvalley.com/longevity-collection',
-    body: "Most people approach health like a buffet -- a little of this, a little of that, no real sequence.\n\nThat is why most health improvement does not stick.\n\n**What I am about to share is different.** This is the exact learning path our highest-performing longevity members follow. It is designed as a system -- each quest builds on the last.\n\n---\n\n**THE 4-QUEST LONGEVITY ROADMAP**\n\n**Quest 1 -- Weeks 1-3: 10x Fitness (Lorenzo Delano)**\n--> Build the body. 15-minute micro-workouts that build lean muscle, boost metabolism, and increase VO2 max -- the single strongest predictor of lifespan.\n--> **Result:** You are stronger, leaner, and more energetic. Your body starts looking and feeling younger.\n\n**Quest 2 -- Weeks 4-7: WildFit (Eric Edmeades)**\n--> Fix the fuel. Reprogram your relationship with food at the psychological level. No diets. No willpower. Just a permanent shift in how you eat.\n--> **Result:** Cravings dissolve. Weight normalizes. Energy stabilizes. Inflammation drops.\n\n**Quest 3 -- Weeks 8-10: The Mastery of Sleep (Dr. Michael Breus)**\n--> Optimize recovery. Discover your chronotype. Restructure your sleep for maximum deep sleep and REM.\n--> **Result:** You wake up feeling restored. Cognitive performance sharpens. Growth hormone production optimizes.\n\n**Quest 4 -- Weeks 11-14: Beyond Fasting (Ronan Oliveira)**\n--> Complete the system. Master intermittent fasting for metabolic efficiency, longevity, and peak mental clarity. Learn your personal fasting sweet spot.\n--> **Result:** Metabolic efficiency unlocked. Cellular repair activated. Weight management becomes effortless.\n\n---\n\n**After the Core 4 -- Months 4-6:**\n\nExplore the 24 bonus programs. Breathwork. Stress management. Meditation. Flexibility. Hormonal health. Peak athletic performance.\n\nThink of the first 14 weeks as building the foundation. Months 4-6 are building the house.\n\n---\n\n**This is a 6-month biological reset.**\n\nNot a 30-day challenge that fades. Not a crash diet that rebounds. A systematic reconstruction of how your body moves, fuels, recovers, and ages.\n\nStart Quest 1 today.\n\n**[Start Full Quest \u2192](https://www.mindvalley.com/longevity-collection)**\n\n---\n\nTo your complete transformation,\n\n[Signature]\n\nP.S. Bookmark this email. Seriously. You will want to come back to this roadmap as you progress through each quest. In two days, I will check in on your Week 1 progress."
+    body:
+    "# Your 4-Quest Longevity Roadmap\n\n" +
+    "You have 4 core quests in your collection. Here is the sequence our healthiest members follow for maximum compounding results.\n\n" +
+    "---\n\n" +
+    "**Month 1: 10x Fitness**\n--> Build the physical foundation. 15-minute workouts, twice a week.\n--> Why first: energy and strength create momentum for everything else.\n\n" +
+    "**Month 2: WildFit**\n--> Reprogram your relationship with food. Dissolve cravings. Achieve food freedom.\n--> Why second: nutrition amplifies the fitness gains from Month 1.\n\n" +
+    "**Month 3: The Mastery of Sleep**\n--> Optimize your recovery. Discover your Chronotype. Sleep in alignment with your biology.\n--> Why third: sleep is where your body repairs everything you built in Months 1-2.\n\n" +
+    "**Month 4: Beyond Fasting**\n--> Master metabolic efficiency. Find your fasting sweet spot. Activate longevity pathways.\n--> Why fourth: fasting is the capstone -- it compounds all three previous pillars.\n\n" +
+    "---\n\n" +
+    "**The compounding logic:**\n\n" +
+    "Fitness gives you energy. Nutrition fuels the energy. Sleep repairs and consolidates. Fasting optimizes the entire system.\n\n" +
+    "Each quest takes about 30 days of 15-20 minute daily lessons. By Month 4, you will have a complete longevity system running on autopilot.\n\n" +
+    "---\n\n" +
+    "This is a suggestion, not a rule. Start wherever your biggest bottleneck is. But if you want the optimal sequence, this is it.\n\n" +
+    "**[Start Your Full Quest \u2192](https://www.mindvalley.com/longevity-collection)**\n\n" +
+    "To your compounding health,\n\n" +
+    "[Signature]\n\n" +
+    "P.S. Members who complete all 4 quests report dramatically improved energy, weight management, and sleep quality. The system works because the pillars reinforce each other."
 },
 
 'co-6': {
-    subject: "Week 1 done -- what's shifting in your body?",
-    preheader: 'Something is already different. Here is what other members experience.',
-    img: 'https://storyblok-cdn.mindvalley.com/f/60579/1200x770/c5a3099305/10x_lp_signup_top_d.jpg',
-    schwartz: 'Product-Aware', cialdini: 'Social Proof',
-    cta: 'Continue Quest \u2192', url: 'https://www.mindvalley.com/longevity-collection',
-    body: "One week.\n\nSeven days since you stepped into the Longevity Collection. Whether you have completed seven lessons or you are just finding your rhythm -- **something has already shifted.**\n\nThe simple act of committing to daily health education changes how your body responds. You are already different from the version of you seven days ago.\n\n---\n\n**What Other Members Typically Experience by Week 1:**\n\n--> **Better morning energy.** Even before changing your routine drastically, the awareness alone shifts behavior. You start making slightly better choices -- and your body notices immediately.\n--> **Improved sleep onset.** If you started Mastery of Sleep, Dr. Breus's chronotype insights often produce results on the very first night. Members report falling asleep 15-20 minutes faster.\n--> **First workout completed.** If you started 10x Fitness, you have felt what a scientifically optimized 15-minute workout can do. Your muscles are waking up.\n--> **New awareness of food patterns.** If you started WildFit, Eric's psychological reframes are already running in the background. You are noticing things about your eating that you never noticed before.\n--> **Fasting clarity.** If you started Beyond Fasting, Ronan's personalized fasting window is already shifting your energy patterns. Many members report sharper thinking during their fast.\n\nThese are not extraordinary results. **These are typical Week 1 outcomes.** The extraordinary results come after Week 2.\n\n---\n\n**Why Week 2 Matters More Than Week 1:**\n\nNeuroscience and exercise physiology agree: new patterns begin to solidify after 7-14 days of consistent practice. What felt like effort in Week 1 starts becoming automatic in Week 2.\n\nThis is where the compound effect kicks in.\n\nA habit that takes willpower today becomes effortless by Day 14. And an effortless habit practiced for 21 days becomes part of who you are.\n\n---\n\n**So keep going.**\n\n15 minutes today. That is all. Not a heroic effort -- just consistency.\n\nThe members who see the biggest health transformations are not the most athletic. They are the most consistent. One lesson a day. Every day. That is the entire formula.\n\n**[Continue Quest \u2192](https://www.mindvalley.com/longevity-collection)**\n\n---\n\nProud of you for being here,\n\n[Signature]\n\nP.S. In three days, I will introduce you to some hidden gems inside your collection that most members do not discover until month 2. These bonus programs are not filler -- they are full-scale health tools worth hundreds each."
+    subject: 'Week 1 check-in: what is shifting?',
+    preheader: 'You have been at this for a week. Here is what to pay attention to.',
+    img: '',
+    schwartz: 'Product-Aware', cialdini: 'Commitment',
+    cta: 'Continue Quest \u2192', url: 'https://home.mindvalley.com',
+    body:
+    "# Week 1: What Is Shifting?\n\n" +
+    "You have been in the Longevity Collection for a week now.\n\n" +
+    "Whether you have completed 3 lessons or 7, something is already shifting. It might be subtle -- a slight increase in energy, a small change in how you think about food or exercise, a night where you slept a little deeper.\n\n" +
+    "**Pay attention to those small shifts.** They are the leading indicators of transformation.\n\n" +
+    "---\n\n" +
+    "Here is what typically happens in Week 1:\n\n" +
+    "--> **10x Fitness members** feel the first muscle activation from slow-motion training. Soreness in places they did not expect.\n--> **WildFit members** start noticing their automatic food responses -- the snacking, the emotional eating, the thirst-disguised-as-hunger.\n--> **Sleep members** discover their Chronotype and realize they have been fighting their biology.\n--> **Fasting members** complete their first intentional fast and notice the mental clarity.\n\n" +
+    "---\n\n" +
+    "**The key at this stage:** do not judge your progress by the results yet. Judge it by your consistency.\n\n" +
+    "If you pressed play every day this week -- even for 10 minutes -- you are ahead of 90% of people who buy courses and never open them.\n\n" +
+    "Keep going. The compound effect accelerates from here.\n\n" +
+    "**[Continue Your Quest \u2192](https://home.mindvalley.com)**\n\n" +
+    "Proud of you for showing up,\n\n" +
+    "[Signature]\n\n" +
+    "P.S. If you missed a day, do not stress. Open the app today and pick up where you left off. Consistency beats perfection every time."
 },
 
 'co-7': {
-    subject: 'Unlock the biohacking toolkit inside your collection',
-    preheader: 'Beyond the core 4 -- these bonus programs are worth $199-$599 each.',
-    img: 'https://storyblok-cdn.mindvalley.com/f/60579/1200x770/c5a3099305/10x_lp_signup_top_d.jpg',
+    subject: 'Unlock the tools most members miss',
+    preheader: 'Beyond the quests: meditations, community, and daily challenges.',
+    img: '',
     schwartz: 'Product-Aware', cialdini: 'Reciprocity',
-    cta: 'Explore Tools \u2192', url: 'https://www.mindvalley.com/longevity-collection',
-    body: "Quick question: **have you explored the 24 bonus programs yet?**\n\nMost members spend the first week or two focused on their core quest -- which is exactly right. But there is a library sitting inside your collection that most people do not discover until later.\n\nI do not want you to be one of those people. Because some of these programs are game-changers on their own.\n\n---\n\n**3 Bonus Programs Every Longevity-Focused Person Should Know About:**\n\n**1. The Longevity Blueprint** (Ben Greenfield)\n--> Ben is a former competitive bodybuilder, Ironman triathlete, and one of the top 100 most influential people in health and fitness. His program covers the 5 pillars of longevity -- from cold exposure to nutrition timing to environmental optimization. It is the complete big-picture map of how aging works at the cellular level.\n--> **Individual value: $399.** Included in your collection.\n\n**2. HyperBody** (Ronan Diego)\n--> Ronan is a peak performance coach who has trained Olympic athletes and Special Forces operators. HyperBody is a mobility and recovery system that keeps your joints, fascia, and connective tissue functioning decades younger than your calendar age.\n--> **Individual value: $299.** Included in your collection.\n\n**3. The Breathwork Blueprint** (Niraj Naik)\n--> Niraj reversed a chronic illness doctors said was incurable -- using only breathwork. This program teaches you proven breathing protocols for stress reduction, energy amplification, and cellular oxygenation.\n--> **Individual value: $199.** Included in your collection.\n\n---\n\n**These are not filler programs.** They are full-scale courses from practitioners who have spent decades in the health and longevity space.\n\nThe combined individual value of these three alone is nearly $900. You have them all.\n\n---\n\n**How to use them:**\n\nDo not interrupt your current quest. Finish your core program first.\n\nBut open the collection and browse. Bookmark the ones that speak to your current health challenges. When you finish your first quest, you will know exactly where to go next.\n\n**[Explore Tools \u2192](https://www.mindvalley.com/longevity-collection)**\n\n---\n\nTo your expanding health toolkit,\n\n[Signature]\n\nP.S. In four days, I will share stories from three members who used this collection to produce specific, measurable health results. Biological age reversals. Weight loss. Sleep improvements. Real data from real people."
+    cta: 'Explore Tools \u2192', url: 'https://home.mindvalley.com',
+    body:
+    "# Go Deeper: The Tools Beyond the Quests\n\n" +
+    "Your 4 core quests are the backbone of the Longevity Collection. But there is a whole layer of tools most members do not discover until weeks in.\n\n" +
+    "We want you to find them now.\n\n" +
+    "---\n\n" +
+    "**Daily Meditations & Breathwork**\n\n--> The Mindvalley app includes guided meditations and breathwork sessions -- 5 to 15 minutes. Perfect for morning routines or evening wind-downs. These are not filler. They are the recovery layer that amplifies everything else.\n\n" +
+    "**Community Challenges**\n\n--> Join group challenges with members worldwide. Accountability, shared progress, and the motivation that comes from knowing thousands of people are doing this alongside you.\n\n" +
+    "**Progress Dashboard**\n\n--> Track your streaks, completed lessons, and milestones. The visual progress is surprisingly motivating -- watching your streak grow makes you want to keep it alive.\n\n" +
+    "---\n\n" +
+    "These tools are free with your collection. They exist to keep you engaged, recovering, and connected.\n\n" +
+    "**[Explore Your Tools \u2192](https://home.mindvalley.com)**\n\n" +
+    "To your deeper practice,\n\n" +
+    "[Signature]\n\n" +
+    "P.S. The members who get the most from their collection are the ones who treat the app as a daily companion -- not just a course library. Open it daily. Even 5 minutes counts."
 },
 
 'co-8': {
-    subject: 'What 3 members did with this collection (health results inside)',
-    preheader: 'Fasting clarity, weight lost, sleep fixed -- real stories.',
-    img: 'https://storyblok-cdn.mindvalley.com/f/60579/1200x770/c5a3099305/10x_lp_signup_top_d.jpg',
+    subject: 'Three people who transformed their health (their stories)',
+    preheader: 'Real Longevity Collection members. Real results. Their words.',
+    img: '',
     schwartz: 'Product-Aware', cialdini: 'Social Proof',
     cta: 'Explore Collection \u2192', url: 'https://www.mindvalley.com/longevity-collection',
-    body: "I want to share something today -- not from me, but from three members who are working through the same collection you have.\n\nThese are not motivational stories. These are specific, measurable health results.\n\n---\n\n**DAVID, 54, AUSTIN** -- Tech executive, desk-bound 12 hours a day.\n\nStarted with 10x Fitness. Lorenzo's 15-minute workouts fit perfectly into his schedule. He gained 8 pounds of lean muscle in 3 months without a single gym session lasting longer than 20 minutes.\n\nThen Beyond Fasting. Ronan's personalized fasting protocol helped him find his sweet spot -- a 14-hour fast that maximized fat burning without affecting his energy.\n\n**6-month result: Lost 18 pounds. VO2 max improved by 22%. Says he has \"more energy at 54 than I had at 35.\" His wife noticed the change within the first month.**\n\n---\n\n**MARIA, 41, LONDON** -- Freelance designer, lifelong yo-yo dieter.\n\nStarted with WildFit. Eric Edmeades's psychological approach was the first thing that made her stop thinking about food all day. The cravings she had fought for 20 years dissolved within the first three weeks.\n\nThen Mastery of Sleep. She had been averaging 5 hours of broken sleep for years. Dr. Breus's chronotype system revealed she was a \"Dolphin\" -- and the sleep schedule she had been forcing was exactly wrong for her biology.\n\n**6-month result: Lost 32 pounds (and kept it off -- no rebound). Sleep went from 5 broken hours to 7.5 solid hours. Cortisol levels normalized. Her doctor took her off blood pressure medication.**\n\n---\n\n**JAMES, 38, SINGAPORE** -- Entrepreneur, chronic stress and fatigue.\n\nStarted with Beyond Fasting. Ronan's approach revealed that his fatigue was partly metabolic -- his eating patterns were spiking and crashing his blood sugar all day. The fasting protocol stabilized his energy within a week.\n\nThen 10x Fitness for the physical transformation, followed by Mastery of Sleep to fix his erratic rest schedule.\n\n**6-month result: Eliminated chronic fatigue. Built visible muscle definition for the first time in his life. Sleep improved from 5.5 to 7.5 hours. Says the collection was \"the best health investment I have ever made, and I have tried everything.\"**\n\n---\n\nThree different starting points. Three different health challenges. Same collection. Same 15 minutes a day.\n\nYou are on the same path they walked. Keep going.\n\n**[Explore Collection \u2192](https://www.mindvalley.com/longevity-collection)**\n\n---\n\nTo your story being written right now,\n\n[Signature]\n\nP.S. In one week, we hit the 3-week milestone. I will have something special for you then -- a checkpoint that will help you see exactly how far you have come and where the next health breakthrough lives."
+    body:
+    "# Transformation Stories\n\n" +
+    "You are two weeks into the Longevity Collection. The changes you are experiencing are real -- and they are just beginning.\n\n" +
+    "Here are three members who walked the same path you are on:\n\n" +
+    "---\n\n" +
+    "{{STORY}}\nhttps://storyblok-cdn.mindvalley.com/f/60579/200x200/placeholder/co-story-1.jpg\n**\"I am stronger, I have more energy, and I now understand and respect my body.\"** Leilani gained 6kg of muscle in her first year with 10x Fitness. She stopped chasing hours at the gym and started training with precision.\n**Leilani Brown** -- 10x Fitness, 1 year\n\n" +
+    "{{STORY}}\nhttps://storyblok-cdn.mindvalley.com/f/60579/200x200/placeholder/co-story-2.jpg\n**\"I feel amazing. Joint pain -- gone. Difficulty breathing -- gone. I lost 18 pounds.\"** Adam's asthma disappeared. His reflux resolved. WildFit did not put him on a diet. It changed how he relates to food.\n**Adam Salyards** -- WildFit student\n\n" +
+    "{{STORY}}\nhttps://storyblok-cdn.mindvalley.com/f/60579/200x200/placeholder/co-story-3.jpg\n**\"I am 40 pounds down since January. I play sand volleyball now. I never thought I would be this active again.\"** Arlene combined Beyond Fasting with a consistent eating window and unlocked energy she had not felt in decades.\n**Arlene Wojciechowski Hayman** -- Beyond Fasting student\n\n" +
+    "---\n\n" +
+    "Every one of these stories started with a first lesson. Just like yours.\n\n" +
+    "The collection is yours. The community is behind you. Keep going.\n\n" +
+    "**[Explore Your Collection \u2192](https://www.mindvalley.com/longevity-collection)**\n\n" +
+    "To your story,\n\n" +
+    "[Signature]\n\n" +
+    "P.S. In one week, you will hit the 21-day mark -- the point where habits begin to crystallize into identity. Do not stop now."
 },
 
 'co-9': {
-    subject: "21 days in -- here's what most members do next",
-    preheader: '3-week milestone. Here is what you have built and what is ahead.',
-    img: 'https://storyblok-cdn.mindvalley.com/f/60579/1200x770/c5a3099305/10x_lp_signup_top_d.jpg',
-    schwartz: 'Most-Aware', cialdini: 'Commitment/Consistency',
-    cta: 'Continue Journey \u2192', url: 'https://www.mindvalley.com/longevity-collection',
-    body: "Three weeks ago, you made a decision that most people never make.\n\nNot just to buy a program -- but to systematically upgrade how your body moves, fuels, recovers, and ages. To treat health optimization as a life strategy, not a New Year's resolution.\n\n**Let me acknowledge that.**\n\n---\n\n**What You Have Built in 21 Days:**\n\n--> A daily health learning habit that is becoming automatic\n--> New frameworks running in the background of every decision you make about food, movement, and recovery\n--> At least one quest completed or well underway\n--> Tangible results -- better energy, improved sleep, less inflammation, or a fundamentally different relationship with food\n\nWhether you have been consistent every single day or you have had some gaps -- **you are in a fundamentally different place than you were 21 days ago.** The neural pathways are forming. The biological shifts are compounding.\n\n---\n\n**What Most Members Do at This Point:**\n\nIf you have completed your first quest -- congratulations. You are ahead of 80% of people who buy online health programs.\n\nHere is what the highest-performing members do next:\n\n--> **Start Quest 2.** Look at the 4-Quest Roadmap from my Day 5 email. Which quest is next? Begin that quest this week.\n--> **Layer in bonus programs.** Browse the 24 extras. Find one that addresses your most pressing health challenge right now.\n--> **Keep the streak alive.** The difference between people who transform and people who relapse is simple: they kept going past Day 21.\n\n---\n\n**Your Full Roadmap (reminder):**\n\n--> Weeks 1-3: 10x Fitness (build the body)\n--> Weeks 4-7: WildFit (fix the fuel)\n--> Weeks 8-10: Mastery of Sleep (optimize recovery)\n--> Weeks 11-14: Beyond Fasting (master metabolism)\n--> Months 4-6: 24 bonus programs (build the house)\n\nYou are 3 weeks in. The foundation is laid. Now the real building begins.\n\n---\n\nI want to share one more thing.\n\nMany members at this point start noticing something: their health transformation does not want to stay in one lane. You came for longevity. But now you are curious about meditation, relationships, productivity, spiritual growth, career optimization.\n\nThat is not a distraction. **That is a signal.**\n\nThe people who build truly extraordinary lives do not just optimize their bodies. They optimize themselves -- across every dimension.\n\nKeep that thought in mind. I will have more to share on this soon.\n\n**[Continue Journey \u2192](https://www.mindvalley.com/longevity-collection)**\n\n---\n\nWith deep respect for how far you have come,\n\n[Signature]\n\nP.S. You started with 28 programs. But what if you had access to 100+? Programs on mindset, relationships, career, speaking, leadership, and more? Many members at your stage start exploring that possibility. Stay tuned."
+    subject: '21 days. You are not the same person who started.',
+    preheader: 'The identity shift has begun. Here is what comes next.',
+    img: '',
+    schwartz: 'Product-Aware', cialdini: 'Commitment',
+    cta: 'Continue Journey \u2192', url: 'https://home.mindvalley.com',
+    body:
+    "# 21 Days. The Identity Shift.\n\n" +
+    "Three weeks ago, you made a decision.\n\n" +
+    "You invested in the Longevity Collection. You pressed play. You showed up, day after day, for 15-20 minutes.\n\n" +
+    "And something has shifted.\n\n" +
+    "---\n\n" +
+    "Maybe it is physical -- more energy, better sleep, a change in how your body feels.\n\n" +
+    "Maybe it is mental -- a new awareness of how you eat, move, rest, and recover.\n\n" +
+    "Maybe it is something harder to name -- a sense that you are becoming someone who takes their health seriously. Not as a chore, but as a practice.\n\n" +
+    "**That is the identity shift.** And it is the most powerful thing that happens in the first 21 days.\n\n" +
+    "---\n\n" +
+    "Research on habit formation shows that 21 days is roughly where a behavior begins to transition from \"something I do\" to \"something I am.\"\n\n" +
+    "You are crossing that threshold.\n\n" +
+    "**Here is what to focus on now:**\n\n" +
+    "--> **If you started one quest, start your second.** The 4-quest roadmap is designed so each pillar amplifies the others.\n--> **If you have been consistent, celebrate it.** Consistency is the hardest part, and you have it.\n--> **If you fell off, today is Day 1 again.** No guilt. No judgment. Just press play.\n\n" +
+    "---\n\n" +
+    "The collection is yours for the year. You have time. But the momentum you have built over 21 days is valuable -- do not let it fade.\n\n" +
+    "**[Continue Your Journey \u2192](https://home.mindvalley.com)**\n\n" +
+    "Here's to the person you are becoming,\n\n" +
+    "[Signature]\n\n" +
+    "P.S. The next 30 days are where the real compounding begins. The foundation is set. Now it accelerates."
 }
 
 });
